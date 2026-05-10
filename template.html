@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    /* ── Page-specific styles go here ── */
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    main {
+      flex: 1;
+      overflow: auto;
+      padding: var(--space-6);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+
+    <header class="app-header">
+      <span class="app-logo">myapp</span>
+      <nav class="tab-bar">
+        <button class="tab active">Home</button>
+        <button class="tab">Notes</button>
+        <button class="tab">Tasks</button>
+      </nav>
+    </header>
+
+    <main>
+      <h1 style="font-size: var(--text-2xl); font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: var(--space-6);">
+        Hello
+      </h1>
+
+      <!-- Example card -->
+      <div class="card" style="max-width: 400px;">
+        <p class="overline" style="margin-bottom: var(--space-2);">Example Card</p>
+        <p style="color: var(--text-muted); font-size: var(--text-base);">
+          This is a base template using rfi-design tokens and components.
+        </p>
+        <div style="display: flex; gap: var(--space-2); margin-top: var(--space-4);">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn">Default</button>
+          <button class="btn btn-danger">Danger</button>
+        </div>
+      </div>
+
+      <!-- Example input -->
+      <div style="max-width: 400px; margin-top: var(--space-6);">
+        <input class="input" placeholder="Search..." style="margin-bottom: var(--space-3);">
+        <input class="input input-underline" placeholder="Underline style...">
+      </div>
+
+      <!-- Example pills -->
+      <div style="display: flex; gap: var(--space-2); margin-top: var(--space-6); flex-wrap: wrap;">
+        <button class="pill active">Active</button>
+        <button class="pill">Option A</button>
+        <button class="pill">Option B</button>
+      </div>
+    </main>
+
+    <!-- Toast (shown via JS: el.classList.add('show')) -->
+    <div class="toast" id="toast">Saved</div>
+
+  </div>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+
+    // Toast helper
+    function showToast(msg, duration = 2000) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), duration);
+    }
+
+    // Pill switching
+    document.querySelectorAll('.pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        pill.closest('div').querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
