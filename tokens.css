@@ -10,6 +10,7 @@
   /* Backgrounds — darkest to lightest */
   --bg-base:      #0d0d0d;
   --bg-raised:    #111111;
+  --bg-subtle:    #181818;   /* note item hover, between raised and surface */
   --bg-surface:   #141414;
   --bg-overlay:   #161616;
   --bg-input:     #1a1a1a;
@@ -22,6 +23,7 @@
   --border-muted:   #252525;
   --border-dim:     #2a2a2a;
   --border-mid:     #333333;
+  --border-heavy:   #3a3a3a;  /* scrollbar thumb, pin dot borders */
 
   /* Text */
   --text-primary:   #e0e0e0;
@@ -30,18 +32,31 @@
   --text-dim:       #666666;
   --text-faint:     #555555;
   --text-ghost:     #444444;
+  --text-done:      #4a4a4a;  /* done/strikethrough text */
   --text-disabled:  #333333;
 
+  /* Editor text hierarchy (headings) */
+  --text-editor-base: #c8c8c8;
+  --text-h1:          #e8e8e8;
+  --text-h2:          #d8d8d8;
+  --text-h3:          #d4d4d4;
+  --text-h4:          #d0d0d0;
+
   /* Accent — green */
-  --accent:         #5fc83b;
-  --accent-bright:  #8ce870;
-  --accent-hover:   #4db82e;
-  --accent-tint:    #0d1a0a;   /* background tint for selected/active */
+  --accent:             #5fc83b;
+  --accent-bright:      #8ce870;
+  --accent-hover:       #4db82e;
+  --accent-tint:        #0d1a0a;  /* bg tint for selected/active items */
+  --accent-surface:     #1a3a15;  /* darker green surface (TOC hover, etc.) */
 
   /* Semantic */
-  --color-danger:   #f87171;
-  --color-success:  #4ade80;
-  --color-link:     #5fc83b;
+  --color-danger:       #f87171;
+  --color-success:      #4ade80;
+  --color-link:         #5fc83b;  /* in-app navigation links */
+  --color-link-blue:    #7ab4f5;  /* hyperlinks in editor */
+  --color-bq-border:    #3a3a5a;  /* blockquote border (subtle blue tint) */
+  --color-done-border:  #166534;  /* done task left border */
+  --editor-selection:   #2a3a50;  /* text selection highlight in editor */
 
   /* Radius */
   --radius-sm:  4px;
