@@ -1,11 +1,11 @@
 /* ── rfi-design: Design Tokens ──────────────────────────────────
-   Dark monospace design system — IBM Plex Mono + terminal aesthetic
+   Dark monospace design system — ui-monospace (system) + terminal aesthetic
    https://github.com/r-fy/rfi-design
 ─────────────────────────────────────────────────────────────── */
 
 :root {
   /* Font */
-  --font: "IBM Plex Mono", monospace;
+  --font: ui-monospace, monospace;
 
   /* Backgrounds — darkest to lightest */
   --bg-base:      #0d0d0d;
@@ -26,7 +26,7 @@
   --border-heavy:   #3a3a3a;  /* scrollbar thumb, pin dot borders */
 
   /* Text */
-  --text-primary:   #e0e0e0;
+  --text-primary:   #e8e8e8;
   --text-secondary: #cccccc;
   --text-muted:     #888888;
   --text-dim:       #666666;
